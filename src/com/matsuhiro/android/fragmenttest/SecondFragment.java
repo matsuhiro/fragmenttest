@@ -139,6 +139,10 @@ public class SecondFragment extends Fragment {
     public void onDestroy() {
         Log.i(TAG, "SecondFragment Enter onDestroy");
         super.onDestroy();
+        if (mWebview != null) {
+            mWebview.destroy();
+            mWebview = null;
+        }
         Log.i(TAG, "SecondFragment Exit  onDestroy");
     }
 

@@ -141,6 +141,10 @@ public class FirstFragment extends Fragment {
     public void onDestroy() {
         Log.d(TAG, "FirstFragment Enter onDestroy");
         super.onDestroy();
+        if (mWebview != null) {
+            mWebview.destroy();
+            mWebview = null;
+        }
         mLastUrl = null;
         Log.d(TAG, "FirstFragment Exit  onDestroy");
     }
